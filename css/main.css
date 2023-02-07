@@ -30,7 +30,7 @@
   .menu-btn {
    display: flex;
    position: absolute;
-   right: 38px;
+   right: 0px;
    /* используем flex для центрирования содержимого */
    align-items: center;
    /* центрируем содержимое кнопки */
