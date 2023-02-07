@@ -4,182 +4,180 @@
    font-family: Helvetica, sans-serif;
  }
 
- @media screen and (max-width: 991px) {
-.wrapper {
-  background: url(../img/mobile-head-bg.png);
-  background-repeat: no-repeat;
+ .wrapper {
+   background: url(../img/mobile-head-bg.png);
+   background-repeat: no-repeat;
+   background-size: cover;
+ }
+
+ .header-container {
+   width: 364px;
+   margin: 0 auto;
+ }
+
+ .header-row {
+   padding-top: 22px;
+   display: flex;
+   justify-content: space-between;
+ }
+
+ /* скрываем чекбокс */
+ #menu-toggle {
+   opacity: 0;
+   display: none;
+  }
+  /* стилизуем кнопку */
+  .menu-btn {
+   display: flex;
+   position: absolute;
+   right: 0px;
+   /* используем flex для центрирования содержимого */
+   align-items: center;
+   /* центрируем содержимое кнопки */
+   width: 25px;
+   height: 27px;
+   cursor: pointer;
+   z-index: 999;
+  }
+  /* добавляем "гамбургер" */
+  .menu-btn > span,
+  .menu-btn > span::before,
+  .menu-btn > span::after {
+   display: block;
+   position: absolute;
+   width: 100%;
+   height: 2px;
+   background-color: #fff;
+  }
+  .menu-btn > span::before {
+   content: '';
+   top: -8px;
+  }
+  .menu-btn > span::after {
+   content: '';
+   top: 8px;
+  }
+ 
+ /* контейнер меню */
+
+ .menu-box {
+  display: flex;
+  background: url(../img/mobile-bg.png);
   background-size: cover;
-}
+  background-repeat: no-repeat;
+  position: fixed;
+  visibility: hidden;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0 0;
+  list-style: none;
+  text-align: center;
+  box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+  flex-direction: column;
+ }
+ /* элементы меню */
 
-.header-container {
-  width: 364px;
+ .menu-item {
+  display: block;
+  padding: 35px 65px;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  border: 1px solid #fff;
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  padding-top: 60px;
   margin: 0 auto;
-}
-
-.header-row {
-  padding-top: 22px;
-  display: flex;
-  justify-content: space-between;
-}
-
-/* скрываем чекбокс */
-#menu-toggle {
-  opacity: 0;
-  display: none;
+  font-weight: 600;
+  text-decoration: none;
  }
- /* стилизуем кнопку */
- .menu-btn {
-  display: flex;
-  position: absolute;
-  right: 0px;
-  /* используем flex для центрирования содержимого */
-  align-items: center;
-  /* центрируем содержимое кнопки */
-  width: 25px;
-  height: 27px;
-  cursor: pointer;
-  z-index: 999;
+
+ .items-last {
+  display: block;
+  padding: 35px 65px;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  border: 1px solid #fff;
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  padding-top: 60px;
+  margin: 0 auto;
+  font-weight: 600;
+  text-decoration: none;
  }
- /* добавляем "гамбургер" */
+
+ .items-yellow {
+  background: none;
+  display: block;
+  padding: 35px 65px;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  padding-top: 60px;
+  margin: 0 auto;
+  font-weight: 600;
+  text-decoration: none;
+ }
+
+ li {
+  transition: none;
+ }
+
+ li {
+  transform: none;
+ }
+
+ #menu-toggle:checked ~ .menu-btn > span {
+  transform: rotate(45deg);
+ }
+
+ #menu-toggle:checked ~ .menu-btn > span::before {
+  top: 0;
+  transform: rotate(0);
+ }
+
+ #menu-toggle:checked ~ .menu-btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+ }
+
+ #menu-toggle:checked ~ .menu-box {
+  visibility: visible;
+  left: 0;
+  z-index: 99;
+ }
+
  .menu-btn > span,
  .menu-btn > span::before,
  .menu-btn > span::after {
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  background-color: #fff;
- }
- .menu-btn > span::before {
-  content: '';
-  top: -8px;
- }
- .menu-btn > span::after {
-  content: '';
-  top: 8px;
+  transition-duration: .25s;
  }
 
-/* контейнер меню */
+ .menu-box {
+  transition-duration: .25s;
+ }
 
-.menu-box {
- display: flex;
- background: url(../img/mobile-bg.png);
- background-size: cover;
- background-repeat: no-repeat;
- position: fixed;
- visibility: hidden;
- top: 0;
- left: -100%;
- width: 100%;
- height: 100%;
- margin: 0;
- padding: 0 0;
- list-style: none;
- text-align: center;
- box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
- flex-direction: column;
-}
-/* элементы меню */
+ .menu-item {
+  transition-duration: .25s;
+ }
 
-.menu-item {
- display: block;
- padding: 35px 65px;
- color: #fff;
- font-family: 'Roboto', sans-serif;
- font-size: 24px;
- border: 1px solid #fff;
- border-left: none;
- border-top: none;
- border-right: none;
- padding-top: 60px;
- margin: 0 auto;
- font-weight: 600;
- text-decoration: none;
-}
+ .header-block {
+   margin-top: 57px;
+ }
 
-.items-last {
- display: block;
- padding: 35px 65px;
- color: #fff;
- font-family: 'Roboto', sans-serif;
- font-size: 24px;
- border: 1px solid #fff;
- border-left: none;
- border-top: none;
- border-right: none;
- padding-top: 60px;
- margin: 0 auto;
- font-weight: 600;
- text-decoration: none;
-}
-
-.items-yellow {
- background: none;
- display: block;
- padding: 35px 65px;
- color: #fff;
- font-family: 'Roboto', sans-serif;
- font-size: 24px;
- border-left: none;
- border-top: none;
- border-right: none;
- padding-top: 60px;
- margin: 0 auto;
- font-weight: 600;
- text-decoration: none;
-}
-
-li {
- transition: none;
-}
-
-li {
- transform: none;
-}
-
-#menu-toggle:checked ~ .menu-btn > span {
- transform: rotate(45deg);
-}
-
-#menu-toggle:checked ~ .menu-btn > span::before {
- top: 0;
- transform: rotate(0);
-}
-
-#menu-toggle:checked ~ .menu-btn > span::after {
- top: 0;
- transform: rotate(90deg);
-}
-
-#menu-toggle:checked ~ .menu-box {
- visibility: visible;
- left: 0;
- z-index: 99;
-}
-
-.menu-btn > span,
-.menu-btn > span::before,
-.menu-btn > span::after {
- transition-duration: .25s;
-}
-
-.menu-box {
- transition-duration: .25s;
-}
-
-.menu-item {
- transition-duration: .25s;
-}
-
-.header-block {
-  margin-top: 57px;
-}
-
-.header-heading {
-  font-size: 38px;
-  font-weight: 800;
-  line-height: 47px;
-  color: #fff;
-  width: 90%;
-}
-}
+ .header-heading {
+   font-size: 38px;
+   font-weight: 800;
+   line-height: 47px;
+   color: #fff;
+   width: 90%;
+ }
